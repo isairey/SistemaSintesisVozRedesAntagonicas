@@ -2,12 +2,12 @@
 
 <img width="220" src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" />
 
-# 🎙️ HiFi-GAN
+# 🎙️ SistemaSintesisVozRedesAntagonicas
 
 ### Generative Adversarial Networks para síntesis de voz de alta fidelidad 🚀
 
 <p align="center">
-  <b>HiFi-GAN</b> es un vocoder basado en GANs capaz de generar audio de alta calidad a partir de espectrogramas Mel con una velocidad muy superior al tiempo real.
+  <b>SistemaSintesisVozRedesAntagonicas</b> es un vocoder basado en GANs capaz de generar audio de alta calidad a partir de espectrogramas Mel con una velocidad muy superior al tiempo real.
 </p>
 
 <p align="center">
@@ -31,7 +31,7 @@
 
 # 🌌 Acerca del proyecto
 
-**HiFi-GAN (High Fidelity GAN)** es un modelo de síntesis de voz basado en Redes Generativas Antagónicas (GANs) diseñado para convertir espectrogramas Mel en audio de alta calidad.
+**SistemaSintesisVozRedesAntagonicas (High Fidelity GAN)** es un modelo de síntesis de voz basado en Redes Generativas Antagónicas (GANs) diseñado para convertir espectrogramas Mel en audio de alta calidad.
 
 El proyecto destaca por:
 
@@ -165,7 +165,7 @@ Evalúa la señal en diferentes escalas.
 # 📂 Estructura del proyecto
 
 ```bash
-HiFi-GAN/
+SistemaSintesisVozRedesAntagonicas/
 │
 ├── configs/
 ├── checkpoints/
@@ -201,7 +201,7 @@ HiFi-GAN/
 ## 1️⃣ Clonar repositorio
 
 ```bash
-git clone https://github.com/jik876/hifi-gan.git
+git clone https://github.com/isairey/SistemaSintesisVozRedesAntagonicas.git
 ```
 
 ---
@@ -209,7 +209,7 @@ git clone https://github.com/jik876/hifi-gan.git
 ## 2️⃣ Entrar al proyecto
 
 ```bash
-cd hifi-gan
+cd SistemaSintesisVozRedesAntagonicas
 ```
 
 ---
@@ -434,13 +434,12 @@ git push origin feature/nueva-funcionalidad
 
 ---
 
-# 👨‍💻 Autores
-
+# 👨‍💻 Desarrollador
 <div align="center">
 
-## Jungil Kong • Jaehyeon Kim • Jaekyoung Bae
+## Isai Reyes - FullStack Developer
 
-Investigadores responsables del desarrollo de HiFi-GAN para síntesis de voz de alta fidelidad basada en GANs.
+
 
 </div>
 
@@ -462,6 +461,6 @@ Proyecto open source orientado a investigación, desarrollo y aplicaciones avanz
 
 <div align="center">
 
-### 🎙️ HiFi-GAN — generación de voz de alta fidelidad impulsada por Inteligencia Artificial 🚀
+### 🎙️ SistemaSintesisVozRedesAntagonicas — generación de voz de alta fidelidad impulsada por Inteligencia Artificial 🚀
 
 </div>
