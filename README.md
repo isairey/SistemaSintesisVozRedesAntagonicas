@@ -1,105 +1,467 @@
-# HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis
+<div align="center">
 
-### Jungil Kong, Jaehyeon Kim, Jaekyoung Bae
+<img width="220" src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" />
 
-In our [paper](https://arxiv.org/abs/2010.05646), 
-we proposed HiFi-GAN: a GAN-based model capable of generating high fidelity speech efficiently.<br/>
-We provide our implementation and pretrained models as open source in this repository.
+# 🎙️ HiFi-GAN
 
-**Abstract :**
-Several recent work on speech synthesis have employed generative adversarial networks (GANs) to produce raw waveforms. 
-Although such methods improve the sampling efficiency and memory usage, 
-their sample quality has not yet reached that of autoregressive and flow-based generative models. 
-In this work, we propose HiFi-GAN, which achieves both efficient and high-fidelity speech synthesis. 
-As speech audio consists of sinusoidal signals with various periods, 
-we demonstrate that modeling periodic patterns of an audio is crucial for enhancing sample quality. 
-A subjective human evaluation (mean opinion score, MOS) of a single speaker dataset indicates that our proposed method 
-demonstrates similarity to human quality while generating 22.05 kHz high-fidelity audio 167.9 times faster than 
-real-time on a single V100 GPU. We further show the generality of HiFi-GAN to the mel-spectrogram inversion of unseen 
-speakers and end-to-end speech synthesis. Finally, a small footprint version of HiFi-GAN generates samples 13.4 times 
-faster than real-time on CPU with comparable quality to an autoregressive counterpart.
+### Generative Adversarial Networks para síntesis de voz de alta fidelidad 🚀
 
-Visit our [demo website](https://jik876.github.io/hifi-gan-demo/) for audio samples.
+<p align="center">
+  <b>HiFi-GAN</b> es un vocoder basado en GANs capaz de generar audio de alta calidad a partir de espectrogramas Mel con una velocidad muy superior al tiempo real.
+</p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/HiFi--GAN-SpeechSynthesis-blueviolet?style=for-the-badge">
+  <img src="https://img.shields.io/badge/PyTorch-DeepLearning-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
+  <img src="https://img.shields.io/badge/GAN-AudioGeneration-purple?style=for-the-badge">
+  <img src="https://img.shields.io/badge/AI-VoiceSynthesis-00C853?style=for-the-badge">
+</p>
 
-## Pre-requisites
-1. Python >= 3.6
-2. Clone this repository.
-3. Install python requirements. Please refer [requirements.txt](requirements.txt)
-4. Download and extract the [LJ Speech dataset](https://keithito.com/LJ-Speech-Dataset/).
-And move all wav files to `LJSpeech-1.1/wavs`
+<p align="center">
+  <a href="#-acerca-del-proyecto">Acerca</a> •
+  <a href="#-características">Características</a> •
+  <a href="#-tecnologías-utilizadas">Tecnologías</a> •
+  <a href="#-instalación">Instalación</a> •
+  <a href="#-entrenamiento">Entrenamiento</a>
+</p>
 
+</div>
 
-## Training
+---
+
+# 🌌 Acerca del proyecto
+
+**HiFi-GAN (High Fidelity GAN)** es un modelo de síntesis de voz basado en Redes Generativas Antagónicas (GANs) diseñado para convertir espectrogramas Mel en audio de alta calidad.
+
+El proyecto destaca por:
+
+* 🎙️ Síntesis de voz natural
+* ⚡ Generación extremadamente rápida
+* 🧠 Arquitectura basada en GAN
+* 🎵 Audio de alta fidelidad
+* 🚀 Inferencia en tiempo real
+* 💾 Bajo consumo de recursos
+
+---
+
+# ✨ Características
+
+## 🎤 Síntesis de Voz
+
+* Conversión Mel → Audio
+* Calidad cercana a voz humana
+* Compatibilidad con múltiples datasets
+* Soporte para múltiples hablantes
+
+---
+
+## ⚡ Alto Rendimiento
+
+* Generación en tiempo real
+* Inferencia optimizada
+* Compatible con GPU y CPU
+* Baja latencia
+
+---
+
+## 🧠 Deep Learning
+
+* Arquitectura GAN
+* Generadores optimizados
+* Discriminadores multi-período
+* Discriminadores multi-escala
+
+---
+
+## 🔄 Integración
+
+* Compatible con Tacotron2
+* Compatible con Glow-TTS
+* Compatible con sistemas TTS personalizados
+* Fine-tuning sencillo
+
+---
+
+# 👨‍💻 Arquitectura del sistema
+
+## 🎙️ Generator
+
+Módulo encargado de generar la señal de audio.
+
+### Funcionalidades
+
+* Conversión Mel-Spectrogram → Waveform
+* Generación eficiente
+* Audio de alta calidad
+* Inferencia rápida
+
+---
+
+## 🎧 Multi-Period Discriminator
+
+Analiza patrones periódicos de la voz.
+
+### Funcionalidades
+
+* Captura características temporales
+* Mejora calidad del audio
+* Reduce artefactos
+
+---
+
+## 📊 Multi-Scale Discriminator
+
+Evalúa la señal en diferentes escalas.
+
+### Funcionalidades
+
+* Mayor realismo
+* Estabilidad durante entrenamiento
+* Calidad perceptual mejorada
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+## 🧠 Inteligencia Artificial
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python,pytorch" />
+</p>
+
+* Python
+* PyTorch
+* GANs
+* Deep Learning
+
+---
+
+## 🎙️ Procesamiento de Audio
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python" />
+</p>
+
+* Mel Spectrograms
+* Speech Processing
+* Audio Synthesis
+* Neural Vocoder
+
+---
+
+## 🧰 Herramientas
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
+</p>
+
+* Git
+* GitHub
+* VS Code
+* Linux
+
+---
+
+# 📂 Estructura del proyecto
+
+```bash
+HiFi-GAN/
+│
+├── configs/
+├── checkpoints/
+├── generated_files/
+├── generated_files_from_mel/
+├── test_files/
+├── test_mel_files/
+├── train.py
+├── inference.py
+├── inference_e2e.py
+├── meldataset.py
+├── models.py
+├── requirements.txt
+└── README.md
 ```
+
+---
+
+# ⚡ Instalación
+
+## 📋 Requisitos
+
+* Python 3.6+
+* PyTorch
+* CUDA (Opcional)
+* Git
+* Dataset LJSpeech
+
+---
+
+# 🚀 Configuración del proyecto
+
+## 1️⃣ Clonar repositorio
+
+```bash
+git clone https://github.com/jik876/hifi-gan.git
+```
+
+---
+
+## 2️⃣ Entrar al proyecto
+
+```bash
+cd hifi-gan
+```
+
+---
+
+## 3️⃣ Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4️⃣ Descargar dataset
+
+Descargar:
+
+```text
+LJSpeech Dataset
+```
+
+y mover los archivos WAV a:
+
+```bash
+LJSpeech-1.1/wavs
+```
+
+---
+
+# 🎯 Entrenamiento
+
+## Modelo V1
+
+```bash
 python train.py --config config_v1.json
 ```
-To train V2 or V3 Generator, replace `config_v1.json` with `config_v2.json` or `config_v3.json`.<br>
-Checkpoints and copy of the configuration file are saved in `cp_hifigan` directory by default.<br>
-You can change the path by adding `--checkpoint_path` option.
 
-Validation loss during training with V1 generator.<br>
-![validation loss](./validation_loss.png)
+---
 
-## Pretrained Model
-You can also use pretrained models we provide.<br/>
-[Download pretrained models](https://drive.google.com/drive/folders/1-eEYTB5Av9jNql0WGBlRoi-WH2J7bp5Y?usp=sharing)<br/> 
-Details of each folder are as in follows:
+## Modelo V2
 
-|Folder Name|Generator|Dataset|Fine-Tuned|
-|------|---|---|---|
-|LJ_V1|V1|LJSpeech|No|
-|LJ_V2|V2|LJSpeech|No|
-|LJ_V3|V3|LJSpeech|No|
-|LJ_FT_T2_V1|V1|LJSpeech|Yes ([Tacotron2](https://github.com/NVIDIA/tacotron2))|
-|LJ_FT_T2_V2|V2|LJSpeech|Yes ([Tacotron2](https://github.com/NVIDIA/tacotron2))|
-|LJ_FT_T2_V3|V3|LJSpeech|Yes ([Tacotron2](https://github.com/NVIDIA/tacotron2))|
-|VCTK_V1|V1|VCTK|No|
-|VCTK_V2|V2|VCTK|No|
-|VCTK_V3|V3|VCTK|No|
-|UNIVERSAL_V1|V1|Universal|No|
+```bash
+python train.py --config config_v2.json
+```
 
-We provide the universal model with discriminator weights that can be used as a base for transfer learning to other datasets.
+---
 
-## Fine-Tuning
-1. Generate mel-spectrograms in numpy format using [Tacotron2](https://github.com/NVIDIA/tacotron2) with teacher-forcing.<br/>
-The file name of the generated mel-spectrogram should match the audio file and the extension should be `.npy`.<br/>
-Example:
-    ```
-    Audio File : LJ001-0001.wav
-    Mel-Spectrogram File : LJ001-0001.npy
-    ```
-2. Create `ft_dataset` folder and copy the generated mel-spectrogram files into it.<br/>
-3. Run the following command.
-    ```
-    python train.py --fine_tuning True --config config_v1.json
-    ```
-    For other command line options, please refer to the training section.
+## Modelo V3
 
+```bash
+python train.py --config config_v3.json
+```
 
-## Inference from wav file
-1. Make `test_files` directory and copy wav files into the directory.
-2. Run the following command.
-    ```
-    python inference.py --checkpoint_file [generator checkpoint file path]
-    ```
-Generated wav files are saved in `generated_files` by default.<br>
-You can change the path by adding `--output_dir` option.
+---
 
+# 📊 Modelos preentrenados
 
-## Inference for end-to-end speech synthesis
-1. Make `test_mel_files` directory and copy generated mel-spectrogram files into the directory.<br>
-You can generate mel-spectrograms using [Tacotron2](https://github.com/NVIDIA/tacotron2), 
-[Glow-TTS](https://github.com/jaywalnut310/glow-tts) and so forth.
-2. Run the following command.
-    ```
-    python inference_e2e.py --checkpoint_file [generator checkpoint file path]
-    ```
-Generated wav files are saved in `generated_files_from_mel` by default.<br>
-You can change the path by adding `--output_dir` option.
+HiFi-GAN proporciona modelos listos para usar:
 
+| Modelo       | Dataset   |
+| ------------ | --------- |
+| LJ_V1        | LJSpeech  |
+| LJ_V2        | LJSpeech  |
+| LJ_V3        | LJSpeech  |
+| VCTK_V1      | VCTK      |
+| VCTK_V2      | VCTK      |
+| VCTK_V3      | VCTK      |
+| UNIVERSAL_V1 | Universal |
 
-## Acknowledgements
-We referred to [WaveGlow](https://github.com/NVIDIA/waveglow), [MelGAN](https://github.com/descriptinc/melgan-neurips) 
-and [Tacotron2](https://github.com/NVIDIA/tacotron2) to implement this.
+---
 
+# 🔥 Fine-Tuning
+
+HiFi-GAN permite ajustar modelos ya entrenados utilizando espectrogramas generados por otros sistemas TTS.
+
+### Compatibilidad
+
+* Tacotron2
+* Glow-TTS
+* FastSpeech
+* Modelos personalizados
+
+Ejemplo:
+
+```bash
+python train.py --fine_tuning True --config config_v1.json
+```
+
+---
+
+# 🎧 Inferencia desde archivos WAV
+
+## Preparar archivos
+
+Crear:
+
+```bash
+test_files/
+```
+
+y copiar los audios WAV.
+
+---
+
+## Ejecutar inferencia
+
+```bash
+python inference.py \
+--checkpoint_file checkpoint.pt
+```
+
+Los resultados se almacenarán en:
+
+```bash
+generated_files/
+```
+
+---
+
+# 🎙️ Inferencia End-to-End
+
+Generar audio directamente desde espectrogramas Mel.
+
+```bash
+python inference_e2e.py \
+--checkpoint_file checkpoint.pt
+```
+
+Los resultados se almacenarán en:
+
+```bash
+generated_files_from_mel/
+```
+
+---
+
+# 📡 Casos de uso
+
+## 🗣️ Síntesis de voz
+
+* Asistentes virtuales
+* Lectores automáticos
+* Sistemas conversacionales
+* Audiolibros
+
+---
+
+## 🤖 Inteligencia Artificial
+
+* TTS Neural
+* Voice Cloning
+* Generación de voz
+* Aplicaciones multimodales
+
+---
+
+## 🎓 Investigación
+
+* Procesamiento de voz
+* Deep Learning
+* Generative Models
+* GAN Research
+
+---
+
+# 🧠 Objetivos del proyecto
+
+## 🚀 Optimización de TTS
+
+* Generación rápida
+* Audio realista
+* Escalabilidad
+* Calidad cercana a voz humana
+
+---
+
+## 📖 Investigación
+
+* Arquitecturas GAN
+* Síntesis neural
+* Aprendizaje profundo
+* Procesamiento de señales
+
+---
+
+# 🚧 Roadmap
+
+## 🔮 Próximas mejoras
+
+* Modelos más compactos
+* Mejor rendimiento CPU
+* Soporte multilingüe
+* Integración con LLMs
+* Optimización para Edge Devices
+
+---
+
+# 🤝 Contribuciones
+
+Las contribuciones son bienvenidas ❤️
+
+## Cómo contribuir
+
+1. Fork del proyecto
+
+```bash
+git checkout -b feature/nueva-funcionalidad
+```
+
+2. Commit
+
+```bash
+git commit -m "✨ Nueva funcionalidad"
+```
+
+3. Push
+
+```bash
+git push origin feature/nueva-funcionalidad
+```
+
+4. Pull Request 🚀
+
+---
+
+# 👨‍💻 Autores
+
+<div align="center">
+
+## Jungil Kong • Jaehyeon Kim • Jaekyoung Bae
+
+Investigadores responsables del desarrollo de HiFi-GAN para síntesis de voz de alta fidelidad basada en GANs.
+
+</div>
+
+---
+
+# 🌟 Apoya el proyecto
+
+⭐ Dale una estrella
+🍴 Haz fork
+📢 Comparte el proyecto
+
+---
+
+# 📜 Licencia
+
+Proyecto open source orientado a investigación, desarrollo y aplicaciones avanzadas de síntesis de voz mediante Deep Learning.
+
+---
+
+<div align="center">
+
+### 🎙️ HiFi-GAN — generación de voz de alta fidelidad impulsada por Inteligencia Artificial 🚀
+
+</div>
